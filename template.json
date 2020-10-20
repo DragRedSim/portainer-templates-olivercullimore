@@ -2572,9 +2572,14 @@
 					"name": "PGID"
 				},
 				{
+					"default": "latest",
 					"label": "VERSION",
-					"name": "VERSION",
-					"set": "latest"
+					"name": "VERSION"
+				},
+				{
+					"default": "",
+					"label": "PLEX_CLAIM",
+					"name": "PLEX_CLAIM"					
 				}
 			],
 			"image": "linuxserver/plex:latest",
