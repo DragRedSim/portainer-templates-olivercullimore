@@ -1,1 +1,1 @@
-# self-hosted-template
+# Portainer Templates
