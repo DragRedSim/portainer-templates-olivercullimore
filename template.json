@@ -2159,7 +2159,7 @@
 					"label": "API_KEY",
 					"name": "API_KEY",
 					"set": "",
-					"description": "Your CloudFlare scoped API token. Follow the steps at https://github.com/oznu/docker-cloudflare-ddns#creating-a-cloudflare-api-token to generate an API Token."
+					"description": "Your CloudFlare scoped API token. Follow the steps in the information section above to generate an API Token."
 				},
 				{
 					"label": "ZONE",
