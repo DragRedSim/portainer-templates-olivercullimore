@@ -2165,12 +2165,12 @@
 					"label": "ZONE",
 					"name": "ZONE",
 					"set": "",
-					"description": "The DNS zone that DDNS updates should be applied to."
+					"description": "The DNS zone that DDNS updates should be applied to. Example: example.com"
 				},
 				{
 					"label": "SUBDOMAIN",
 					"name": "SUBDOMAIN",
-					"description": "A subdomain of the ZONE to write DNS changes to. If this is not supplied the root zone will be used."
+					"description": "A subdomain of the ZONE to write DNS changes to. If this is not supplied the root zone will be used. Example: dynamic"
 				},
 				{
 					"label": "RRTYPE",
