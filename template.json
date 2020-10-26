@@ -1364,14 +1364,15 @@
 		},
 		{
 			"categories": [
-				"Other"
+				"Other",
+				"VPN"
 			],
 			"description": "OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
 			"env": [
 				{
+					"default": "eth0",
 					"label": "INTERFACE",
-					"name": "INTERFACE",
-					"set": "eth0"
+					"name": "INTERFACE"
 				},
 				{
 					"default": "1000",
@@ -1382,6 +1383,11 @@
 					"default": "1000",
 					"label": "PGID",
 					"name": "PGID"
+				},
+				{
+					"default": "1000",
+					"label": "Timezone (i.e. 'America/Los Angeles')",
+					"name": "TZ"
 				}
 			],
 			"image": "linuxserver/openvpn-as:latest",
@@ -1393,6 +1399,7 @@
 				"9443:9443/tcp",
 				"1194:1194/udp"
 			],
+			"privileged": true,
 			"restart_policy": "unless-stopped",
 			"title": "OpenVPN Access Server",
 			"type": 1,
