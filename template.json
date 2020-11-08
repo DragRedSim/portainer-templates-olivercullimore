@@ -3713,7 +3713,7 @@
 				},
 				{
 					"default": "pass",
-					"description": "specifiy a stream profile that you want to use for adhoc transcoding in tvh, e.g. mp4",
+					"description": "Stream profile for adhoc transcoding in TVHeadend, e.g. mp4",
 					"label": "TVH_PROFILE",
 					"name": "TVH_PROFILE"
 				},
