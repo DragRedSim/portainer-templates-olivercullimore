@@ -793,6 +793,77 @@
 		},
 		{
 			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "An Enhanced drop in replacement for Mysql",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "localhost",
+					"description": "Address/host name of the MySQL server",
+					"label": "PMA_HOST",
+					"name": "PMA_HOST"
+				},
+				{
+					"default": "3306",
+					"description": "Port of the MySQL server",
+					"label": "PMA_PORT",
+					"name": "PMA_PORT"
+				},
+				{
+					"default": "root",
+					"description": "Username to use for config authentication method",
+					"label": "PMA_USER",
+					"name": "PMA_USER"
+				},
+				{
+					"default": "",
+					"description": "Password to use for config authentication method",
+					"label": "PMA_PASSWORD",
+					"name": "PMA_PASSWORD"
+				},
+				{
+					"default": "",
+					"description": "User-facing URI (when using a reverse proxy etc.)",
+					"label": "PMA_ABSOLUTE_URI",
+					"name": "PMA_ABSOLUTE_URI"
+				},
+				{
+					"description": "Comma separated list of address/host names of the MySQL servers (for multiple servers)",
+					"label": "PMA_HOSTS",
+					"name": "PMA_HOSTS",
+					"set": ""
+				},
+				{
+					"description": "Comma separated list of ports of the MySQL servers (for multiple servers)",
+					"label": "PMA_PORTS",
+					"name": "PMA_PORTS",
+					"set": ""
+				}
+			],
+			"image": "phpmyadmin/phpmyadmin:latest",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/phpmyadmin-icon.png",
+			"name": "phpmyadmin",
+			"platform": "linux",
+			"ports": [
+				"8080:80/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "phpmyadmin",
+			"type": 1
+		},
+		{
+			"categories": [
 				"Other"
 			],
 			"description": "McMyAdmin 2 is the leading web control panel and administration console for Minecraft servers.",
