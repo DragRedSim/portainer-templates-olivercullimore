@@ -3679,6 +3679,67 @@
 		},
 		{
 			"categories": [
+				"Video",
+				"Other"
+			],
+			"description": "Tvheadend is a small flask app to proxy requests between Plex Media Server and Tvheadend.",
+			"env": [
+				{
+					"default": "",
+					"label": "TVH_BINDADDR",
+					"name": "TVH_BINDADDR"
+				},
+				{
+					"default": "http://test:test@localhost:9981",
+					"label": "TVH_URL",
+					"name": "TVH_URL"
+				},
+				{
+					"default": "http://localhost",
+					"label": "TVH_PROXY_URL",
+					"name": "TVH_PROXY_URL"
+				},
+				{
+					"default": "6",
+					"description": "Number of tuners in TVHeadend",
+					"label": "TVH_TUNER_COUNT",
+					"name": "TVH_TUNER_COUNT"
+				},
+				{
+					"default": "300",
+					"description": "Subscription priority",
+					"label": "TVH_WEIGHT",
+					"name": "TVH_WEIGHT"
+				},
+				{
+					"default": "pass",
+					"description": "specifiy a stream profile that you want to use for adhoc transcoding in tvh, e.g. mp4",
+					"label": "TVH_PROFILE",
+					"name": "TVH_PROFILE"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "christoefar/tvhproxy:latest",
+			"name": "tvhproxy",
+			"platform": "linux",
+			"ports": [
+				"5004:5004/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Tvhproxy",
+			"type": 1
+		},
+		{
+			"categories": [
 				"Cloud",
 				"Books"
 			],
