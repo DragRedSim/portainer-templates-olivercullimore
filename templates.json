@@ -4051,7 +4051,7 @@
 			"description": "Web GUI for youtube-dl with playlist support. Allows you to download videos from YouTube and dozens of other sites (https://ytdl-org.github.io/youtube-dl/supportedsites.html).",
 			"image": "alexta69/metube:latest",
 			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/ytdlm.png",
-			"name": "MeTube (YouTubeDL)",
+			"name": "metube-youtubedl",
 			"platform": "linux",
 			"ports": [
 				"8081:8081/tcp"
