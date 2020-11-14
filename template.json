@@ -4061,9 +4061,9 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/portainer/Files/AppData/MeTube/Downloads",
+					"bind": "/portainer/Files/AppData/Config/MeTube/Downloads",
 					"container": "/downloads"
-				},
+				}
 			]
 		},
 		{
