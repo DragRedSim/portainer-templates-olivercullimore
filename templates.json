@@ -3817,18 +3817,17 @@
 			"description": "An app to emulate the HDHomeRun API which allows Plex Media Server's DVR feature to connect to EETV Boxes.",
 			"env": [
 				{
-					"default": "http://test:test@localhost:9981",
+					"default": "http://192.168.1.50/",
 					"label": "PROXY_BASE_URL",
 					"name": "PROXY_BASE_URL"
 				},
 				{
-					"default": "http://localhost",
+					"default": "http://192.168.1.52/",
 					"label": "EETV_IP",
 					"name": "EETV_IP"
 				},
 				{
-					"default": "6",
-					"description": "Number of tuners in TVHeadend",
+					"default": "",
 					"label": "EETV_APP_KEY",
 					"name": "EETV_APP_KEY"
 				},
