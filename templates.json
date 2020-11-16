@@ -3811,6 +3811,50 @@
 		},
 		{
 			"categories": [
+				"Video",
+				"Other"
+			],
+			"description": "An app to emulate the HDHomeRun API which allows Plex Media Server's DVR feature to connect to EETV Boxes.",
+			"env": [
+				{
+					"default": "http://test:test@localhost:9981",
+					"label": "PROXY_BASE_URL",
+					"name": "PROXY_BASE_URL"
+				},
+				{
+					"default": "http://localhost",
+					"label": "EETV_IP",
+					"name": "EETV_IP"
+				},
+				{
+					"default": "6",
+					"description": "Number of tuners in TVHeadend",
+					"label": "EETV_APP_KEY",
+					"name": "EETV_APP_KEY"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "olivercullimore/eetv-plex-proxy:latest",
+			"name": "eetv-plex-proxy",
+			"platform": "linux",
+			"ports": [
+				"5004:5004/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "EETV Plex Proxy",
+			"type": 1
+		},
+		{
+			"categories": [
 				"Cloud",
 				"Books"
 			],
