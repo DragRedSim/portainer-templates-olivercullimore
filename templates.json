@@ -3817,17 +3817,26 @@
 			"description": "An app to emulate the HDHomeRun API which allows Plex Media Server's DVR feature to connect to EETV Boxes.",
 			"env": [
 				{
-					"default": "http://192.168.1.50/",
-					"label": "PROXY_BASE_URL",
-					"name": "PROXY_BASE_URL"
+					"default": "localhost",
+					"description": "Specify the host domain/IP to use e.g. 192.168.1.50",
+					"label": "PROXY_HOST",
+					"name": "PROXY_HOST"
 				},
 				{
-					"default": "http://192.168.1.52/",
+					"default": "5004",
+					"description": "Specify the port to use e.g. 5004",
+					"label": "PROXY_PORT",
+					"name": "PROXY_PORT"
+				},
+				{
+					"default": "192.168.1.52",
+					"description": "Specify the IP of the EETV Box e.g. 192.168.1.50",
 					"label": "EETV_IP",
 					"name": "EETV_IP"
 				},
 				{
 					"default": "",
+					"description": "Specify the AppKey for the EETV Box. Leave blank to use default AppKey",
 					"label": "EETV_APP_KEY",
 					"name": "EETV_APP_KEY"
 				},
@@ -3850,7 +3859,13 @@
 			],
 			"restart_policy": "unless-stopped",
 			"title": "EETV Plex Proxy",
-			"type": 1
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/EETVPlexProxy",
+					"container": "/config"
+				}
+			]
 		},
 		{
 			"categories": [
