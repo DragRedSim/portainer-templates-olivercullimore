@@ -4453,20 +4453,6 @@
 			"description": "Refer to https://github.com/OliverCullimore/media-grabber-worker for documentation.",
 			"env": [
 				{
-					"default": "1000",
-					"label": "PUID",
-					"name": "PUID"
-				},
-				{
-					"default": "1000",
-					"label": "PGID",
-					"name": "PGID"
-				},
-				{
-					"label": "TZ",
-					"name": "TZ"
-				},
-				{
 					"label": "REDIS_PASSWORD",
 					"name": "REDIS_PASSWORD"
 				},
@@ -4476,8 +4462,14 @@
 					"name": "OUTPUT_TEMPLATE"
 				},
 				{
-					"label": "PORT",
-					"name": "PORT"
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
 				}
 			],
 			"platform": "linux",
