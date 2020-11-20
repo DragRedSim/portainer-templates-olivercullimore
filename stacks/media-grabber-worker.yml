@@ -2,8 +2,7 @@
 version: "2"
 services:
   worker:
-    image: vimagick/youtube-worker
-    container_name: media-grabber-worker
+    image: olivercullimore/media-grabber-worker
     links:
       - redis
     volumes:
