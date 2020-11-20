@@ -4478,6 +4478,7 @@
 				"url": "https://github.com/OliverCullimore/portainer-templates"
 			},
 			"title": "Media Grabber Worker",
+			"name": "Media Grabber Worker",
 			"type": 3
 		}
 	]
