@@ -4443,6 +4443,50 @@
 					"container": "/var/www/wallabag/web/assets/images"
 				}
 			]
+		},
+		{
+			"categories": [
+				"Tools",
+				"Media",
+				"Other"
+			],
+			"description": "Refer to https://github.com/OliverCullimore/media-grabber-worker for documentation.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"label": "TZ",
+					"name": "TZ"
+				},
+				{
+					"label": "REDIS_PASSWORD",
+					"name": "REDIS_PASSWORD"
+				},
+				{
+					"default": "%(id)s.%(ext)s",
+					"label": "OUTPUT_TEMPLATE",
+					"name": "OUTPUT_TEMPLATE"
+				},
+				{
+					"label": "PORT",
+					"name": "PORT"
+				}
+			],
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/media-grabber-worker.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "Media Grabber Worker",
+			"type": 3
 		}
 	]
 }
