@@ -4478,8 +4478,8 @@
 				},
 				{
 					"default": "%(title)s-%(id)s.%(ext)s",
-					"label": "OUTPUT_TEMPLATE",
-					"name": "OUTPUT_TEMPLATE"
+					"label": "YTDL_OUTPUT_TEMPLATE",
+					"name": "YTDL_OUTPUT_TEMPLATE"
 				},
 				{
 					"default": "",
