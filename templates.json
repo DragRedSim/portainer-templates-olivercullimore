@@ -4454,9 +4454,6 @@
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/gitlab-runner-icon.png",
 			"name": "gitlab-runner",
 			"platform": "linux",
-			"ports": [
-				"80:80/tcp"
-			],
 			"restart_policy": "unless-stopped",
 			"title": "GitLab Runner",
 			"type": 1,
