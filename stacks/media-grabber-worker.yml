@@ -6,7 +6,7 @@ services:
     links:
       - redis
     volumes:
-      - /portainer/Files/AppData/media-grabber-worker:/data
+      - /portainer/Files/AppData/media-grabber-worker:/root/content
     environment:
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
