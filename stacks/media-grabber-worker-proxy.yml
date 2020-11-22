@@ -1,0 +1,37 @@
+---
+version: "2"
+services:
+  worker:
+    image: olivercullimore/media-grabber-worker
+    links:
+      - redis
+    volumes:
+      - /portainer/Files/AppData/media-grabber-worker:/root/content
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_DATABASE=${REDIS_DATABASE}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - YTDL_FORMAT=${YTDL_FORMAT}
+      - YTDL_OUTPUT_TEMPLATE=${YTDL_OUTPUT_TEMPLATE}
+      - YTDL_PROXY=${YTDL_PROXY}
+      - YTDL_WRITEINFOJSON=${YTDL_WRITEINFOJSON}
+      - YTDL_VERBOSE=${YTDL_VERBOSE}
+    restart: unless-stopped
+    depends_on:
+      - proxy
+    
+  proxy:
+    image: easypi/shadowsocks-libev
+    command:
+      ss-local -s ${PROXY_SERVER}
+        -p ${PROXY_SERVER_PORT}
+        -m aes-256-gcm
+        -k ${PROXY_SERVER_PASSWORD}
+        -b 0.0.0.0
+        -l 1080
+        -t 60
+        --fast-open
+    ports:
+      - "${PROXY_PORT}:1080"
+    restart: unless-stopped

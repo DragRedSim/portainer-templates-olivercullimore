@@ -4531,11 +4531,125 @@
 			],
 			"platform": "linux",
 			"repository": {
-				"stackfile": "stacks/media-grabber-worker.yml",
+				"stackfile": "stacks/media-grabber-worker-redis.yml",
 				"url": "https://github.com/OliverCullimore/portainer-templates"
 			},
-			"title": "Media Grabber Worker",
-			"name": "Media Grabber Worker",
+			"title": "Media Grabber Worker with Redis",
+			"name": "Media Grabber Worker with Redis",
+			"type": 3
+		},
+		{
+			"categories": [
+				"Tools",
+				"Media",
+				"Other"
+			],
+			"description": "Refer to https://github.com/OliverCullimore/media-grabber-worker for documentation.",
+			"env": [
+				{
+					"default": "redis",
+					"label": "REDIS_HOST",
+					"name": "REDIS_HOST"
+				},
+				{
+					"default": "6379",
+					"label": "REDIS_PORT",
+					"name": "REDIS_PORT"
+				},
+				{
+					"default": "1",
+					"label": "REDIS_DATABASE",
+					"name": "REDIS_DATABASE"
+				},
+				{
+					"label": "REDIS_PASSWORD",
+					"name": "REDIS_PASSWORD"
+				},
+				{
+					"default": "best",
+					"label": "YTDL_FORMAT",
+					"name": "YTDL_FORMAT"
+				},
+				{
+					"default": "%(title)s-%(id)s.%(ext)s",
+					"label": "YTDL_OUTPUT_TEMPLATE",
+					"name": "YTDL_OUTPUT_TEMPLATE"
+				},
+				{
+					"default": "socks5h://proxy:1080",
+					"label": "YTDL_PROXY",
+					"name": "YTDL_PROXY"
+				},
+				{
+					"default": true,
+					"label": "YTDL_WRITEINFOJSON",
+					"name": "YTDL_WRITEINFOJSON",
+					"select": [
+						{
+							"text": "Enabled",
+							"value": true,
+							"default": true
+						},
+						{
+							"text": "Disabled",
+							"value": false
+						}
+					]
+				},
+				{
+					"default": false,
+					"label": "YTDL_VERBOSE",
+					"name": "YTDL_VERBOSE",
+					"select": [
+						{
+							"text": "Disabled",
+							"value": false,
+							"default": true
+						},
+						{
+							"text": "Enabled",
+							"value": true
+						}
+					]
+				},
+				{
+					"default": "us-sfo.prod.surfshark.com",
+					"label": "PROXY_SERVER",
+					"name": "PROXY_SERVER"
+				},
+				{
+					"default": "",
+					"label": "PROXY_SERVER_PORT",
+					"name": "PROXY_SERVER_PORT"
+				},
+				{
+					"default": "",
+					"label": "PROXY_SERVER_PASSWORD",
+					"name": "PROXY_SERVER_PASSWORD"
+				},
+				{
+					"default": "1080",
+					"label": "PROXY_PORT",
+					"name": "PROXY_PORT"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/media-grabber-worker-proxy.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "Media Grabber Worker with Proxy",
+			"name": "Media Grabber Worker with Proxy",
 			"type": 3
 		}
 	]
