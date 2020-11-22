@@ -4501,7 +4501,7 @@
 					"name": "YTDL_FORMAT"
 				},
 				{
-					"default": "%(title)s-%(id)s.%(ext)s",
+					"default": "%(title)s.%(ext)s",
 					"label": "YTDL_OUTPUT_TEMPLATE",
 					"name": "YTDL_OUTPUT_TEMPLATE"
 				},
