@@ -4501,11 +4501,6 @@
 					"name": "YTDL_FORMAT"
 				},
 				{
-					"default": "%(title)s.%(ext)s",
-					"label": "YTDL_OUTPUT_TEMPLATE",
-					"name": "YTDL_OUTPUT_TEMPLATE"
-				},
-				{
 					"default": "",
 					"label": "YTDL_PROXY",
 					"name": "YTDL_PROXY"
