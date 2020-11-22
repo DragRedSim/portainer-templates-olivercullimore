@@ -4487,6 +4487,7 @@
 					"name": "YTDL_PROXY"
 				},
 				{
+					"default": true,
 					"label": "YTDL_WRITEINFOJSON",
 					"name": "YTDL_WRITEINFOJSON",
 					"select": [
@@ -4502,6 +4503,7 @@
 					]
 				},
 				{
+					"default": false,
 					"label": "YTDL_VERBOSE",
 					"name": "YTDL_VERBOSE",
 					"select": [
