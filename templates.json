@@ -4670,6 +4670,318 @@
 			"title": "Media Grabber Worker with Proxy",
 			"name": "Media Grabber Worker with Proxy",
 			"type": 3
+		},
+		{
+			"categories": [
+				"Docker",
+				"Tools",
+				"Other"
+			],
+			"description": "Docker image registry",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "registry:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+			"name": "docker-registry",
+			"platform": "linux",
+			"ports": [
+				"5000:5000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Docker Registry",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/DockerRegistry",
+					"container": "/var/lib/registry"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Web",
+				"Tools",
+				"Other"
+			],
+			"description": "HTTP/2 web server with automatic HTTPS",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "abiosoft/caddy:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/caddy.png",
+			"name": "caddy",
+			"platform": "linux",
+			"ports": [
+				"80:80/tcp",
+				"443:443/tcp",
+				"2015:2015/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Caddy",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Caddy",
+					"container": "/root/.caddy"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Database",
+				"Tools",
+				"Other"
+			],
+			"description": "The most advanced open-source database",
+			"env": [
+				{
+					"name": "POSTGRES_USER",
+					"label": "Superuser"
+				},
+				{
+					"name": "POSTGRES_PASSWORD",
+					"label": "Superuser password"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "postgres:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+			"name": "postgresql",
+			"platform": "linux",
+			"ports": [
+				"5432:5432/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "PostgreSQL",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/PostgreSQL",
+					"container": "/var/lib/postgresql/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Database",
+				"Tools",
+				"Other"
+			],
+			"description": "Open-source document-oriented database",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "mongo:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+			"name": "mongo",
+			"platform": "linux",
+			"ports": [
+				"27017:27017/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Mongo",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Mongo",
+					"container": "/data/db"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Database",
+				"Tools",
+				"Other"
+			],
+			"description": "An open-source, survivable, strongly consistent, scale-out SQL database",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "cockroachdb/cockroach:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cockroachdb.png",
+			"name": "cockroachdb",
+			"platform": "linux",
+			"ports": [
+				"26257:26257/tcp",
+				"8080:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "CockroachDB",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/CockroachDB",
+					"container": "/cockroach/cockroach-data"
+				}
+			],
+			"command": "start --insecure"
+		},
+		{
+			"categories": [
+				"Database",
+				"Tools",
+				"Other"
+			],
+			"description": "An open-source distributed SQL database",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "crate:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/cratedb.png",
+			"name": "cratedb",
+			"platform": "linux",
+			"ports": [
+				"4200:4200/tcp",
+				"4300:4300/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "CrateDB",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/CrateDB",
+					"container": "/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Database",
+				"Tools",
+				"Other"
+			],
+			"description": "Open-source search and analytics engine",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "elasticsearch:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/elasticsearch.png",
+			"name": "elasticsearch",
+			"platform": "linux",
+			"ports": [
+				"9200:9200/tcp",
+				"9300:9300/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Elasticsearch",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Elasticsearch",
+					"container": "/usr/share/elasticsearch/data"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Tools",
+				"Other"
+			],
+			"description": "Open-source end-to-end software development platform",
+			"note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "gitlab/gitlab-ce:latest",
+			"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
+			"name": "gitlab-ce",
+			"platform": "linux",
+			"ports": [
+				"80:80/tcp",
+				"443:443/tcp",
+				"22:22/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Gitlab CE",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/GitlabCE/etc",
+					"container": "/etc/gitlab"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/GitlabCE/log",
+					"container": "/var/log/gitlab"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/GitlabCE/opt",
+					"container": "/var/opt/gitlab"
+				}
+			]
 		}
 	]
 }
