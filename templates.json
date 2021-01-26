@@ -5007,7 +5007,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "influxdb:latest",
+			"image": "quay.io/influxdb/influxdb:v2.0.3",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/influxdb.png",
 			"name": "influxdb",
 			"platform": "linux",
