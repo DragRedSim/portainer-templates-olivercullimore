@@ -5029,6 +5029,42 @@
 				"Tools",
 				"Other"
 			],
+			"description": "The analytics platform for all your metrics",
+			"note": "Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "grafana/grafana:master",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/grafana.png",
+			"name": "grafana",
+			"platform": "linux",
+			"ports": [
+				"3000:3000/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Grafana",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Grafana",
+					"container": "/var/lib/grafana"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Tools",
+				"Other"
+			],
 			"description": "Open-source end-to-end software development platform",
 			"note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
 			"env": [
