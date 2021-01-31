@@ -5043,7 +5043,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "grafana/grafana:master",
+			"image": "grafana/grafana",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/grafana.png",
 			"name": "grafana",
 			"platform": "linux",
