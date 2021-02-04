@@ -5050,6 +5050,7 @@
 			"ports": [
 				"3000:3000/tcp"
 			],
+			"privileged": true,
 			"restart_policy": "unless-stopped",
 			"title": "Grafana",
 			"type": 1,
