@@ -5106,6 +5106,85 @@
 					"container": "/var/opt/gitlab"
 				}
 			]
+		},
+		{
+			"categories": [
+				"Tools",
+				"Other"
+			],
+			"description": "An app that periodically gets energy data from the geotogether.com API and stores it in an InfluxDB database.",
+			"env": [
+				{
+					"default": "10",
+					"description": "Specify the fetch interval for live meter data",
+					"label": "Live Meter Data Fetch Interval (seconds)",
+					"name": "LIVE_DATA_FETCH_INTERVAL"
+				},
+				{
+					"default": "10",
+					"description": "Specify the fetch interval for periodic meter data",
+					"label": "Periodic Meter Data Fetch Interval (seconds)",
+					"name": "PERIODIC_DATA_FETCH_INTERVAL"
+				},
+				{
+					"description": "Specify the geo Home username",
+					"label": "geo User",
+					"name": "GEO_USER"
+				},
+				{
+					"description": "Specify the geo Home password",
+					"label": "geo Pass",
+					"name": "GEO_PASS"
+				},
+				{
+					"description": "Specify the InfluxDB host",
+					"label": "InfluxDB Host",
+					"name": "INFLUXDB_HOST"
+				},
+				{
+					"description": "Specify the InfluxDB port",
+					"label": "InfluxDB Port",
+					"name": "INFLUXDB_PORT"
+				},
+				{
+					"description": "Specify the InfluxDB organization",
+					"label": "InfluxDB Organization",
+					"name": "INFLUXDB_ORG"
+				},
+				{
+					"description": "Specify the InfluxDB Bucket",
+					"label": "InfluxDB Bucket",
+					"name": "INFLUXDB_BUCKET"
+				},
+				{
+					"description": "Specify the InfluxDB Token",
+					"label": "InfluxDB Token",
+					"name": "INFLUXDB_TOKEN"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"image": "olivercullimore/geo-energy-data",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/geo-energy-data.png",
+			"name": "geo-energy-data",
+			"platform": "linux",
+			"restart_policy": "unless-stopped",
+			"title": "geo Energy Data",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/geoEnergyData",
+					"container": "/config"
+				}
+			]
 		}
 	]
 }
