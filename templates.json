@@ -5121,7 +5121,7 @@
 					"name": "LIVE_DATA_FETCH_INTERVAL"
 				},
 				{
-					"default": "10",
+					"default": "300",
 					"description": "Specify the fetch interval for periodic meter data",
 					"label": "Periodic Meter Data Fetch Interval (seconds)",
 					"name": "PERIODIC_DATA_FETCH_INTERVAL"
