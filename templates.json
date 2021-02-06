@@ -5142,6 +5142,7 @@
 					"name": "INFLUXDB_HOST"
 				},
 				{
+					"default": "8086",
 					"description": "Specify the InfluxDB port",
 					"label": "InfluxDB Port",
 					"name": "INFLUXDB_PORT"
@@ -5160,6 +5161,12 @@
 					"description": "Specify the InfluxDB Token",
 					"label": "InfluxDB Token",
 					"name": "INFLUXDB_TOKEN"
+				},
+				{
+					"default": "/config/config.json",
+					"description": "Specify the config filepath",
+					"label": "Config Filepath",
+					"name": "CONFIG_FILE"
 				},
 				{
 					"default": "1000",
