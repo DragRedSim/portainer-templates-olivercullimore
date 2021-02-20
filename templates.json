@@ -1299,24 +1299,61 @@
 				"Tools"
 			],
 			"description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
-			"image": "jc21/nginx-proxy-manager",
-			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/proxy_mgr.png",
-			"name": "nginx-proxy-manager",
-			"platform": "linux",
-			"ports": [
-				"80:8080/tcp",
-				"81:8181/tcp",
-				"443:4443/tcp"
-			],
-			"restart_policy": "unless-stopped",
-			"title": "Nginx Proxy Manager",
-			"type": 1,
-			"volumes": [
+			"env": [
 				{
-					"bind": "/portainer/Files/AppData/Config/Nginx-Proxy",
-					"container": "/config"
+					"default": "8181",
+					"label": "Nginx Proxy Manager WebUI Port",
+					"name": "NPM_WEBUI_PORT"
+				},
+				{
+					"default": "80",
+					"label": "Nginx Proxy Manager HTTP Port",
+					"name": "NPM_HTTP_PORT"
+				},
+				{
+					"default": "443",
+					"label": "Nginx Proxy Manager HTTPS Port",
+					"name": "NPM_HTTPS_PORT"
+				},
+				{
+					"default": "npm",
+					"label": "MYSQL_ROOT_PASSWORD",
+					"name": "MYSQL_ROOT_PASSWORD"
+				},
+				{
+					"default": "npm",
+					"label": "MYSQL_DATABASE",
+					"name": "MYSQL_DATABASE"
+				},
+				{
+					"default": "npm",
+					"label": "MYSQL_USER",
+					"name": "MYSQL_USER"
+				},
+				{
+					"default": "npm",
+					"label": "MYSQL_PASSWORD",
+					"name": "MYSQL_PASSWORD"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
 				}
-			]
+			],
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/nginx-proxy-manager.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "Nginx Proxy Manager",
+			"name": "nginx-proxy-manager",
+			"type": 3
 		},
 		{
 			"categories": [
