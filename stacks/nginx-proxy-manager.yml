@@ -9,12 +9,13 @@ services:
       - "${NPM_HTTPS_PORT}:443"
     environment:
       DB_MYSQL_HOST: "db"
-      DB_MYSQL_PORT: 3306
+      DB_MYSQL_PORT: ${MYSQL_PORT}
       DB_MYSQL_USER: ${MYSQL_USER}
       DB_MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       DB_MYSQL_NAME: ${MYSQL_DATABASE}
     volumes:
       - /portainer/Files/AppData/Config/Nginx-Proxy/data:/data
+      - /portainer/Files/AppData/Config/Nginx-Proxy/etc:/etc/nginx
       - /portainer/Files/AppData/Config/Nginx-Proxy/letsencrypt:/etc/letsencrypt
     restart: unless-stopped
     depends_on:
@@ -27,6 +28,8 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${MYSQL_PORT}:3306"
     volumes:
       - ./data/mysql:/var/lib/mysql
     restart: unless-stopped

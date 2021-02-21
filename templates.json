@@ -1316,6 +1316,11 @@
 					"name": "NPM_HTTPS_PORT"
 				},
 				{
+					"default": "3306",
+					"label": "MYSQL_PORT",
+					"name": "MYSQL_PORT"
+				},
+				{
 					"default": "npm",
 					"label": "MYSQL_ROOT_PASSWORD",
 					"name": "MYSQL_ROOT_PASSWORD"
