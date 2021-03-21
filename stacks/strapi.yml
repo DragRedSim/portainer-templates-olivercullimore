@@ -1,0 +1,31 @@
+---
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    environment:
+      DATABASE_CLIENT: mongo
+      DATABASE_NAME: strapi
+      DATABASE_HOST: mongo
+      DATABASE_PORT: ${MONGODB_PORT}
+      DATABASE_USERNAME: ${MONGODB_USER}
+      DATABASE_PASSWORD: ${MONGODB_PASS}
+    volumes:
+      - /portainer/Files/AppData/Config/Strapi:/srv/app
+    ports:
+      - '${STRAPI_PORT}:1337'
+    restart: unless-stopped
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_DATABASE: strapi
+      MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASS}
+    ports:
+      - '${MONGODB_PORT}:27017'
+    volumes:
+      - /portainer/Files/AppData/Config/StrapiDB:/data/db
+    restart: unless-stopped

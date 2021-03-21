@@ -5152,6 +5152,54 @@
 		{
 			"categories": [
 				"Tools",
+				"Productivity",
+				"Web",
+				"Other"
+			],
+			"description": "Strapi CMS.",
+			"env": [
+				{
+					"default": "1337",
+					"label": "Strapi Port",
+					"name": "STRAPI_PORT"
+				},
+				{
+					"default": "27017",
+					"label": "MongoDB Port",
+					"name": "MONGODB_PORT"
+				},
+				{
+					"default": "strapi",
+					"label": "MongoDB Root Username",
+					"name": "MONGODB_USER"
+				},
+				{
+					"label": "MongoDB Root Password",
+					"name": "MONGODB_PASS"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/strapi.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "Strapi",
+			"name": "strapi",
+			"type": 3
+		},
+		{
+			"categories": [
+				"Tools",
 				"Other"
 			],
 			"description": "An app that periodically gets energy data from the geotogether.com API and stores it in an InfluxDB database.",
