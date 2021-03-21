@@ -1,5 +1,5 @@
 ---
-version: '3'
+version: "2"
 services:
   strapi:
     image: strapi/strapi
@@ -13,7 +13,7 @@ services:
     volumes:
       - /portainer/Files/AppData/Config/Strapi:/srv/app
     ports:
-      - '${STRAPI_PORT}:1337'
+      - "${STRAPI_PORT}:1337"
     restart: unless-stopped
     depends_on:
       - mongo
@@ -25,7 +25,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGODB_USER}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGODB_PASS}
     ports:
-      - '${MONGODB_PORT}:27017'
+      - "${MONGODB_PORT}:27017"
     volumes:
       - /portainer/Files/AppData/Config/StrapiDB:/data/db
     restart: unless-stopped
