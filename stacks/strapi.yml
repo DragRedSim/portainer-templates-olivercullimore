@@ -10,6 +10,7 @@ services:
       DATABASE_PORT: ${MONGODB_PORT}
       DATABASE_USERNAME: ${MONGODB_USER}
       DATABASE_PASSWORD: ${MONGODB_PASS}
+      JWT_SECRET: ${STRAPI_JWT_SECRET}
     volumes:
       - /portainer/Files/AppData/Config/Strapi:/srv/app
     ports:

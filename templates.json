@@ -5164,6 +5164,10 @@
 					"name": "STRAPI_PORT"
 				},
 				{
+					"label": "Strapi JWT Secret",
+					"name": "STRAPI_JWT_SECRET"
+				},
+				{
 					"default": "27017",
 					"label": "MongoDB Port",
 					"name": "MONGODB_PORT"
