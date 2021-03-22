@@ -1322,12 +1322,6 @@
 			"restart_policy": "unless-stopped",
 			"title": "Nginx Official",
 			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/NginxOfficial",
-					"container": "/config"
-				}
-			]
 		},
 		{
 			"categories": [
