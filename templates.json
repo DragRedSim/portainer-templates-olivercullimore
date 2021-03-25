@@ -5241,6 +5241,11 @@
 			"description": "Miniflux.",
 			"env": [
 				{
+					"default": "8080",
+					"label": "Miniflux Port",
+					"name": "MINIFLUX_PORT"
+				},
+				{
 					"default": "admin",
 					"label": "Miniflux Username",
 					"name": "MINIFLUX_USERNAME"
