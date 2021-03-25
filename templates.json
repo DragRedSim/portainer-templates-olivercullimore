@@ -5233,6 +5233,38 @@
 		},
 		{
 			"categories": [
+				"Tools",
+				"Productivity",
+				"Web",
+				"Other"
+			],
+			"description": "Miniflux.",
+			"env": [
+				{
+					"default": "admin",
+					"label": "Miniflux Username",
+					"name": "MINIFLUX_USERNAME"
+				},
+				{
+					"label": "Miniflux Password",
+					"name": "MINIFLUX_PASSWORD"
+				},
+				{
+					"label": "Postgres Password",
+					"name": "POSTGRES_PASSWORD"
+				}
+			],
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/minflux.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "Miniflux",
+			"name": "miniflux",
+			"type": 3
+		},
+		{
+			"categories": [
 				"Web",
 				"Tools",
 				"Productivity",
