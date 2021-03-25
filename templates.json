@@ -5256,7 +5256,7 @@
 			],
 			"platform": "linux",
 			"repository": {
-				"stackfile": "stacks/minflux.yml",
+				"stackfile": "stacks/miniflux.yml",
 				"url": "https://github.com/OliverCullimore/portainer-templates"
 			},
 			"title": "Miniflux",
