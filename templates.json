@@ -5267,6 +5267,10 @@
 					"container": "/opt/magic_mirror/modules"
 				},
 				{
+					"bind": "/portainer/Files/AppData/Config/MagicMirror2/css/custom.css",
+					"container": "/opt/magic_mirror/css/custom.css"
+				},
+				{
 					"bind": "/etc/localtime",
 					"container": "/etc/localtime:ro"
 				}
