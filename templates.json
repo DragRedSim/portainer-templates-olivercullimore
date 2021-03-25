@@ -1321,7 +1321,7 @@
 			],
 			"restart_policy": "unless-stopped",
 			"title": "Nginx Official",
-			"type": 1,
+			"type": 1
 		},
 		{
 			"categories": [
@@ -5230,6 +5230,47 @@
 			"title": "Strapi",
 			"name": "strapi",
 			"type": 3
+		},
+		{
+			"categories": [
+				"Web",
+				"Tools",
+				"Productivity",
+				"Other"
+			],
+			"description": "MagicMirror² is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant.",
+			"env": [
+				{
+					"default": "Europe/London",
+					"description": "Specify the Timezone",
+					"label": "Timezone",
+					"name": "TZ"
+				}
+			],
+			"image": "bastilimbach/docker-magicmirror:latest",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/magicmirror2.png",
+			"name": "magicmirror2",
+			"platform": "linux",
+			"ports": [
+				"80:8080/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "MagicMirror²",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/MagicMirror2/config",
+					"container": "/opt/magic_mirror/config"
+				},
+				{
+					"bind": "/portainer/Files/AppData/Config/MagicMirror2/modules",
+					"container": "/opt/magic_mirror/modules"
+				},
+				{
+					"bind": "/etc/localtime",
+					"container": "/etc/localtime:ro"
+				}
+			]
 		},
 		{
 			"categories": [
