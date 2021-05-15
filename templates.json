@@ -4034,6 +4034,346 @@
 				"Maintenance"
 			],
 			"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
+			"env": [
+				{
+					"label": "Time Zone",
+					"description": "Sets the time zone to be used by WatchTower's logs and the optional Cron 'Schedule'.",
+					"name": "TZ",
+					"default": "UTC"
+				},
+				{
+					"label": "Cleanup",
+					"description": "Removes old images after updating. When true, watchtower will remove the old image after restarting a container with a new image. Use this option to prevent the accumulation of orphaned images on your system as containers are updated.",
+					"name": "WATCHTOWER_CLEANUP",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Remove Attached Volumes",
+					"description": "Removes attached volumes after updating. When true, watchtower will remove all attached volumes from the container before restarting with a new image. Use this option to force new volumes to be populated as containers are updated.",
+					"name": "WATCHTOWER_REMOVE_VOLUMES",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Docker host",
+					"description": "Docker daemon socket to connect to. Can be pointed at a remote Docker host by specifying a TCP endpoint as 'tcp://hostname:port'.",
+					"name": "DOCKER_HOST",
+					"default": "unix:///var/run/docker.sock"
+				},
+				{
+					"label": "Docker API version",
+					"description": "The API version to use by the Docker client for connecting to the Docker daemon. The minimum supported version is 1.24.",
+					"name": "DOCKER_API_VERSION",
+					"default": "1.24"
+				},
+				{
+					"label": "Include Restarting",
+					"description": "Will also include restarting containers.",
+					"name": "WATCHTOWER_INCLUDE_RESTARTING",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Include Stopped",
+					"description": "Will also include created and exited containers.",
+					"name": "WATCHTOWER_INCLUDE_STOPPED",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Revive Stopped",
+					"description": "Start any stopped containers that have had their image updated. This is only valid if 'Include Stopped' is true.",
+					"name": "WATCHTOWER_REVIVE_STOPPED",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Poll Interval",
+					"description": "Poll interval (in seconds). This value controls how frequently watchtower will poll for new images. Either 'Schedule' or a 'Poll Interval' can be defined, but not both.",
+					"name": "WATCHTOWER_POLL_INTERVAL",
+					"default": "86400"
+				},
+				{
+					"label": "Label Enable",
+					"description": "Only update containers that have a 'com.centurylinklabs.watchtower.enable' label set to true.",
+					"name": "WATCHTOWER_LABEL_ENABLE",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Without Updating Containers",
+					"description": "Will only monitor for new images, send notifications and invoke the pre-check/post-check hooks, but will not update the containers.",
+					"name": "WATCHTOWER_MONITOR_ONLY",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Without Restarting Containers",
+					"description": "Do not restart containers after updating. This option can be useful when the start of the containers is managed by an external system such as systemd.",
+					"name": "WATCHTOWER_NO_RESTART",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Without Pulling New Images",
+					"description": "Do not pull new images. When this is true, watchtower will not attempt to pull new images from the registry. Instead it will only monitor the local image cache for changes. Use this option if you are building new images directly on the Docker host without pushing them to a registry.",
+					"name": "WATCHTOWER_NO_PULL",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Without Sending A Startup Message",
+					"description": "Do not send a message after watchtower started. Otherwise there will be an info-level notification.",
+					"name": "WATCHTOWER_NO_STARTUP_MESSAGE",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Run Once",
+					"description": "Run an update attempt against a container name list one time immediately and exit.",
+					"name": "WATCHTOWER_RUN_ONCE",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "HTTP API Mode",
+					"description": "Runs Watchtower in HTTP API mode, only allowing image updates to be triggered by an HTTP request. For details see HTTP API. Add WATCHTOWER_HTTP_API_TOKEN env variable to set an authentication token.",
+					"name": "WATCHTOWER_HTTP_API",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "HTTP API Metrics",
+					"description": "Enables a metrics endpoint, exposing prometheus metrics via HTTP. See Metrics for details.",
+					"name": "WATCHTOWER_HTTP_API_METRICS",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Rolling Restart",
+					"description": "Restart one image at time instead of stopping and starting all at once. Useful in conjunction with lifecycle hooks to implement zero-downtime deploy.",
+					"name": "WATCHTOWER_ROLLING_RESTART",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Wait Until Timeout",
+					"description": "Timeout before the container is forcefully stopped.",
+					"name": "WATCHTOWER_TIMEOUT",
+					"default": "10s"
+				},
+				{
+					"label": "TLS Verification",
+					"description": "Use TLS when connecting to the Docker socket and verify the server's certificate.",
+					"name": "DOCKER_TLS_VERIFY",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "HEAD Failure Warnings",
+					"description": "When to warn about HEAD pull requests failing. Auto means that it will warn when the registry is known to handle the requests and may rate limit pull requests (mainly docker.io).",
+					"name": "WATCHTOWER_WARN_ON_HEAD_FAILURE",
+					"select": [
+						{
+							"text": "always",
+							"value": "always"
+						},
+						{
+							"default": true,
+							"text": "auto",
+							"value": "auto"
+						},
+						{
+							"text": "never",
+							"value": "never"
+						}
+					]
+				},
+				{
+					"label": "Debug",
+					"description": "Enable debug mode with verbose logging.",
+					"name": "WATCHTOWER_DEBUG",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "Trace",
+					"description": "Enable trace mode with very verbose logging. Caution: exposes credentials!",
+					"name": "WATCHTOWER_TRACE",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				},
+				{
+					"label": "ANSI Colors",
+					"description": "Disable ANSI color escape codes in log output.",
+					"name": "NO_COLOR",
+					"select": [
+						{
+							"text": "true",
+							"value": "true"
+						},
+						{
+							"default": true,
+							"text": "false",
+							"value": "false"
+						}
+					]
+				}
+			],
 			"image": "containrrr/watchtower:latest",
 			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/watchtower.png",
 			"name": "watchtower",
