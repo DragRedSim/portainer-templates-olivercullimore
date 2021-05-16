@@ -4883,6 +4883,33 @@
 		{
 			"categories": [
 				"Tools",
+				"Other"
+			],
+			"description": "Jetbrains TeamCity Server",
+			"image": "jetbrains/teamcity-server",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
+			"name": "teamcity-server-instance",
+			"platform": "linux",
+			"ports": [
+				"8111:8111/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Jetbrains TeamCity Server",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/teamcity-serves/data",
+					"container": "/data/teamcity_server/datadir"
+				},
+				{
+					"bind": "/portainer/Files/AppData/teamcity-serves/logs",
+					"container": "/opt/teamcity/logs"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Tools",
 				"Media",
 				"Other"
 			],
