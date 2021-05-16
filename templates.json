@@ -4898,12 +4898,40 @@
 			"type": 1,
 			"volumes": [
 				{
-					"bind": "/portainer/Files/AppData/teamcity-serves/data",
+					"bind": "/portainer/Files/AppData/teamcity-server/data",
 					"container": "/data/teamcity_server/datadir"
 				},
 				{
-					"bind": "/portainer/Files/AppData/teamcity-serves/logs",
+					"bind": "/portainer/Files/AppData/teamcity-server/logs",
 					"container": "/opt/teamcity/logs"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Tools",
+				"Other"
+			],
+			"description": "Jetbrains TeamCity Agent",
+			"env": [
+				{
+					"description": "URL of the TeamCity server agent will connect to.",
+					"label": "Server URL",
+					"name": "SERVER_URL",
+					"default": ""
+				}
+			],
+			"image": "jetbrains/teamcity-agent",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
+			"name": "teamcity-server-instance",
+			"platform": "linux",
+			"restart_policy": "unless-stopped",
+			"title": "Jetbrains TeamCity Agent",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/teamcity-agent/data",
+					"container": "/data/teamcity_agent/conf"
 				}
 			]
 		},
