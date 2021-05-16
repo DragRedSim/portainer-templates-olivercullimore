@@ -4938,6 +4938,44 @@
 		{
 			"categories": [
 				"Tools",
+				"Other"
+			],
+			"description": "Jetbrains TeamCity Agent (Docker in Docker)",
+			"env": [
+				{
+					"description": "URL of the TeamCity server agent will connect to.",
+					"label": "Server URL",
+					"name": "SERVER_URL",
+					"default": ""
+				},
+				{
+					"description": "Start Docker within the Docker container.",
+					"label": "Docker in Docker",
+					"name": "DOCKER_IN_DOCKER",
+					"default": "start"
+				}
+			],
+			"image": "jetbrains/teamcity-agent:2021.1-linux-sudo",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
+			"name": "teamcity-server-instance",
+			"platform": "linux",
+			"privileged": true,
+			"restart_policy": "unless-stopped",
+			"title": "Jetbrains TeamCity Agent (Docker in Docker)",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/teamcity-agent/data",
+					"container": "/data/teamcity_agent/conf"
+				},
+				{
+					"container": "/var/lib/docker"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Tools",
 				"Media",
 				"Other"
 			],
