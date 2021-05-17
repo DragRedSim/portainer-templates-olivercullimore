@@ -4888,7 +4888,7 @@
 			"description": "Jetbrains TeamCity Server",
 			"image": "jetbrains/teamcity-server",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
-			"name": "teamcity-server-instance",
+			"name": "teamcity-server",
 			"platform": "linux",
 			"ports": [
 				"8111:8111/tcp"
@@ -4923,7 +4923,7 @@
 			],
 			"image": "jetbrains/teamcity-agent",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
-			"name": "teamcity-server-instance",
+			"name": "teamcity-agent",
 			"platform": "linux",
 			"restart_policy": "unless-stopped",
 			"title": "Jetbrains TeamCity Agent",
@@ -4955,9 +4955,9 @@
 					"default": "start"
 				}
 			],
-			"image": "jetbrains/teamcity-agent:2021.1-linux-sudo",
+			"image": "jetbrains/teamcity-agent:2020.2.4-linux-sudo",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
-			"name": "teamcity-server-instance",
+			"name": "teamcity-agent",
 			"platform": "linux",
 			"privileged": true,
 			"restart_policy": "unless-stopped",
