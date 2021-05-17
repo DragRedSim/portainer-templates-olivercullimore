@@ -29,7 +29,7 @@ services:
   agent1:
     image: "jetbrains/teamcity-agent:2020.2.4-linux-sudo"
     environment:
-      SERVER_URL: "server:${SERVER_PORT}"
+      SERVER_URL: "server:8111"
       TZ: ${TZ}
       DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
     volumes:
@@ -43,7 +43,7 @@ services:
   agent2:
     image: "jetbrains/teamcity-agent:2020.2.4-linux-sudo"
     environment:
-      SERVER_URL: "server:${SERVER_PORT}"
+      SERVER_URL: "server:8111"
       TZ: ${TZ}
       DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
     volumes:
@@ -57,7 +57,7 @@ services:
   agent3:
     image: "jetbrains/teamcity-agent:2020.2.4-linux-sudo"
     environment:
-      SERVER_URL: "server:${SERVER_PORT}"
+      SERVER_URL: "server:8111"
       TZ: ${TZ}
       DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
     volumes:
