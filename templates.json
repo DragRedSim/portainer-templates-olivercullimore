@@ -4961,7 +4961,7 @@
 			"platform": "linux",
 			"privileged": true,
 			"restart_policy": "unless-stopped",
-			"title": "Jetbrains TeamCity Agent (Docker in Docker)",
+			"title": "Jetbrains TeamCity Agent Docker",
 			"type": 1,
 			"volumes": [
 				{
@@ -4972,6 +4972,80 @@
 					"container": "/var/lib/docker"
 				}
 			]
+		},
+		{
+			"categories": [
+				"Tools",
+				"Media",
+				"Other"
+			],
+			"description": "Jetbrains TeamCity Server with 3 Jetbrains TeamCity Agents (Docker in Docker).",
+			"env": [
+				{
+					"default": "8111",
+					"label": "TeamCity Server Port",
+					"name": "SERVER_PORT"
+				},
+				{
+					"default": "-Xmx2g -XX:ReservedCodeCacheSize=350m",
+					"label": "TeamCity Server Memory Options",
+					"name": "SERVER_MEM_OPTS"
+				},
+				{
+					"description": "Start Docker within the Agent Docker container.",
+					"label": "Agent Docker in Docker",
+					"name": "AGENT_DOCKER_IN_DOCKER",
+					"default": "start"
+				},
+				{
+					"label": "MySQL Root Password",
+					"name": "MYSQL_ROOT_PASSWORD",
+					"set": ""
+				},
+				{
+					"default": "teamcity",
+					"label": "MYSQL_DATABASE",
+					"name": "MYSQL_DATABASE"
+				},
+				{
+					"default": "teamcity",
+					"label": "MYSQL_USER",
+					"name": "MYSQL_USER"
+				},
+				{
+					"label": "MYSQL_PASSWORD",
+					"name": "MYSQL_PASSWORD"
+				},
+				{
+					"default": "3306",
+					"label": "MYSQL_PORT",
+					"name": "MYSQL_PORT"
+				},
+				{
+					"default": "Europe/London",
+					"label": "Timezone",
+					"name": "TZ"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				}
+			],
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/teamcity.png",
+			"name": "teamcity-stack",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/teamcity-server-agents.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "Jetbrains TeamCity Stack",
+			"type": 3
 		},
 		{
 			"categories": [

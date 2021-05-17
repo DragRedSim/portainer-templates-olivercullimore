@@ -1,0 +1,71 @@
+---
+version: "2"
+services:
+  server:
+    image: "jetbrains/teamcity-server"
+    ports:
+      - "${SERVER_PORT}:8111"
+    environment:
+      TEAMCITY_SERVER_MEM_OPTS: ${SERVER_MEM_OPTS}
+    volumes:
+      - /portainer/Files/AppData/teamcity-server/data:/data/teamcity_server/datadir
+      - /portainer/Files/AppData/teamcity-server/logs:/opt/teamcity/logs
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  db:
+    image: "linuxserver/mariadb:latest"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      TZ: ${TZ}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    volumes:
+      - /portainer/Files/AppData/teamcity-db/config:/config
+    restart: unless-stopped
+
+  agent1:
+    image: "jetbrains/teamcity-agent:2020.2.4-linux-sudo"
+    environment:
+      SERVER_URL: "server:${SERVER_PORT}"
+      TZ: ${TZ}
+      DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
+    volumes:
+      - /portainer/Files/AppData/teamcity-agent-1/data:/data/teamcity_agent/conf
+      - teamcity_agent1_volume:/var/lib/docker
+    privileged: true
+    restart: unless-stopped
+    depends_on:
+      - server
+
+  agent2:
+    image: "jetbrains/teamcity-agent:2020.2.4-linux-sudo"
+    environment:
+      SERVER_URL: "server:${SERVER_PORT}"
+      TZ: ${TZ}
+      DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
+    volumes:
+      - /portainer/Files/AppData/teamcity-agent-2/data:/data/teamcity_agent/conf
+      - teamcity_agent1_volume:/var/lib/docker
+    privileged: true
+    restart: unless-stopped
+    depends_on:
+      - server
+
+  agent3:
+    image: "jetbrains/teamcity-agent:2020.2.4-linux-sudo"
+    environment:
+      SERVER_URL: "server:${SERVER_PORT}"
+      TZ: ${TZ}
+      DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
+    volumes:
+      - /portainer/Files/AppData/teamcity-agent-3/data:/data/teamcity_agent/conf
+      - teamcity_agent1_volume:/var/lib/docker
+    privileged: true
+    restart: unless-stopped
+    depends_on:
+      - server
