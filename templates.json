@@ -5017,11 +5017,6 @@
 					"name": "MYSQL_PASSWORD"
 				},
 				{
-					"default": "3306",
-					"label": "MYSQL_PORT",
-					"name": "MYSQL_PORT"
-				},
-				{
 					"default": "Europe/London",
 					"label": "Timezone",
 					"name": "TZ"
