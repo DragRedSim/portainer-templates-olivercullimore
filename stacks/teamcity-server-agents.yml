@@ -50,7 +50,7 @@ services:
       DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
     volumes:
       - /portainer/Files/AppData/teamcity-agent-2/data:/data/teamcity_agent/conf
-      - teamcity_agent1_volume:/var/lib/docker
+      - teamcity_agent2_volume:/var/lib/docker
     privileged: true
     restart: unless-stopped
     depends_on:
@@ -64,8 +64,13 @@ services:
       DOCKER_IN_DOCKER: ${AGENT_DOCKER_IN_DOCKER}
     volumes:
       - /portainer/Files/AppData/teamcity-agent-3/data:/data/teamcity_agent/conf
-      - teamcity_agent1_volume:/var/lib/docker
+      - teamcity_agent3_volume:/var/lib/docker
     privileged: true
     restart: unless-stopped
     depends_on:
       - server
+
+volumes:
+  teamcity_agent1_volume:
+  teamcity_agent2_volume:
+  teamcity_agent3_volume:
