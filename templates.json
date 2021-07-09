@@ -1552,6 +1552,68 @@
 				}
 			]
 		},
+	    {
+			"categories": [
+			  "Other",
+			  "VPN"
+			],
+			"description": "Wireguard Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.",
+			"env": [
+				{
+					"default": "wireguard.domain.com",
+					"label": "Server URL",
+					"name": "SERVERURL"
+				},
+				{
+					"default": "51820",
+					"label": "Server Port",
+					"name": "SERVERPORT"
+				},
+				{
+					"default": "1",
+					"label": "Peers",
+					"name": "PEERS"
+				},
+				{
+					"default": "auto",
+					"label": "Peer DNS",
+					"name": "PEERDNS"
+				},
+				{
+					"default": "10.64.1.0",
+					"label": "Internal Subnet",
+					"name": "INTERNAL_SUBNET"
+				},
+				{
+					"default": "0.0.0.0/0",
+					"label": "Allowed IPs",
+					"name": "ALLOWEDIPS"
+				},
+				{
+					"default": "1000",
+					"label": "PUID",
+					"name": "PUID"
+				},
+				{
+					"default": "1000",
+					"label": "PGID",
+					"name": "PGID"
+				},
+				{
+					"default": "Europe/London",
+					"label": "Timezone",
+					"name": "TZ"
+				}
+			],
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/wireguard.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "WireGuard",
+			"name": "wireguard",
+			"type": 3
+      	},
 		{
 			"categories": [
 				"Other",
