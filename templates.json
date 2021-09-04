@@ -2704,6 +2704,70 @@
 				"Other",
 				"Tools"
 			],
+			"description": "A Docker container for Firefox.",
+			"env": [
+				{
+					"default": "1000",
+					"label": "USER_ID",
+					"name": "USER_ID"
+				},
+				{
+					"default": "1000",
+					"label": "GROUP_ID",
+					"name": "GROUP_ID"
+				},
+				{
+					"label": "Timezone",
+					"name": "TZ"
+				},
+				{
+					"default": "1",
+					"label": "Keep App Running",
+					"name": "KEEP_APP_RUNNING"
+				},
+				{
+					"default": "1280",
+					"label": "Display Width",
+					"name": "DISPLAY_WIDTH"
+				},
+				{
+					"default": "768",
+					"label": "Display Height",
+					"name": "DISPLAY_HEIGHT"
+				},
+				{
+					"default": "0",
+					"label": "Secure Connection",
+					"name": "SECURE_CONNECTION"
+				},
+				{
+					"label": "VNC Password",
+					"name": "VNC_PASSWORD",
+					"description": "Note: Password is limited to 8 characters"
+				}
+			],
+			"image": "jlesage/firefox:latest",
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/firefox.png",
+			"name": "firefox",
+			"platform": "linux",
+			"ports": [
+				"5800:5800/tcp"
+			],
+			"restart_policy": "unless-stopped",
+			"title": "Firefox",
+			"type": 1,
+			"volumes": [
+				{
+					"bind": "/portainer/Files/AppData/Config/Firefox",
+					"container": "/config"
+				}
+			]
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
 			"description": "A clientless remote desktop gateway.",
 			"image": "oznu/guacamole:latest",
 			"logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/guacamole.png",
