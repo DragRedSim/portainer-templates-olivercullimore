@@ -2707,18 +2707,14 @@
 			"description": "A Docker container for Firefox.",
 			"env": [
 				{
-					"default": "1000",
-					"label": "USER_ID",
-					"name": "USER_ID"
+					"default": "5800",
+					"label": "WEB_PORT",
+					"name": "WEB_PORT"
 				},
 				{
-					"default": "1000",
-					"label": "GROUP_ID",
-					"name": "GROUP_ID"
-				},
-				{
-					"label": "Timezone",
-					"name": "TZ"
+					"default": "5900",
+					"label": "VNC_PORT",
+					"name": "VNC_PORT"
 				},
 				{
 					"default": "1",
@@ -2744,24 +2740,37 @@
 					"label": "VNC Password",
 					"name": "VNC_PASSWORD",
 					"description": "Note: Password is limited to 8 characters"
+				},
+				{
+					"default": "1000",
+					"label": "User ID",
+					"name": "USER_ID"
+				},
+				{
+					"default": "1000",
+					"label": "Group ID",
+					"name": "GROUP_ID"
+				},
+				{
+					"default": "Europe/London",
+					"label": "Timezone",
+					"name": "TZ"
+				},
+				{
+					"default": "2GB",
+					"label": "Shared Memory Size",
+					"name": "SHM_SIZE",
 				}
 			],
-			"image": "jlesage/firefox:latest",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/firefox.png",
 			"name": "firefox",
 			"platform": "linux",
-			"ports": [
-				"5800:5800/tcp"
-			],
-			"restart_policy": "unless-stopped",
+			"repository": {
+				"stackfile": "stacks/firefox.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
 			"title": "Firefox",
-			"type": 1,
-			"volumes": [
-				{
-					"bind": "/portainer/Files/AppData/Config/Firefox",
-					"container": "/config"
-				}
-			]
+			"type": 3
 		},
 		{
 			"categories": [

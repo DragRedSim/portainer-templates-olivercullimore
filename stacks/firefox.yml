@@ -1,0 +1,21 @@
+---
+version: "2"
+services:
+  firefox:
+    image: "jlesage/firefox:latest"
+    ports:
+      - "${WEB_PORT}:5800"
+      - "${VNC_PORT}:5900"
+    environment:
+      USER_ID: ${USER_ID}
+      GROUP_ID: ${GROUP_ID}
+      TZ: ${TZ}
+      KEEP_APP_RUNNING: ${KEEP_APP_RUNNING}
+      DISPLAY_WIDTH: ${DISPLAY_WIDTH}
+      DISPLAY_HEIGHT: ${DISPLAY_HEIGHT}
+      SECURE_CONNECTION: ${SECURE_CONNECTION}
+      VNC_PASSWORD: ${VNC_PASSWORD}
+    shm_size: ${SMH_SIZE}
+    volumes:
+      - /portainer/Files/AppData/Config/Firefox:/config
+    restart: unless-stopped
