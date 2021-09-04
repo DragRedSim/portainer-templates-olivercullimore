@@ -2759,7 +2759,7 @@
 				{
 					"default": "2GB",
 					"label": "Shared Memory Size",
-					"name": "SHM_SIZE",
+					"name": "SHM_SIZE"
 				}
 			],
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/firefox.png",
