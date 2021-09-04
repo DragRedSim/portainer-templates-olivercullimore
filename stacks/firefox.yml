@@ -15,6 +15,7 @@ services:
       DISPLAY_HEIGHT: ${DISPLAY_HEIGHT}
       SECURE_CONNECTION: ${SECURE_CONNECTION}
       VNC_PASSWORD: ${VNC_PASSWORD}
+      X11VNC_EXTRA_OPTS: ${X11VNC_EXTRA_OPTS}
     shm_size: ${SMH_SIZE}
     security_opt:
       - seccomp:unconfined

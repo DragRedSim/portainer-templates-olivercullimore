@@ -2760,6 +2760,11 @@
 					"default": "2GB",
 					"label": "Shared Memory Size",
 					"name": "SHM_SIZE"
+				},
+				{
+					"default": "-nocursor",
+					"label": "X11VNC Extra Options",
+					"name": "X11VNC_EXTRA_OPTS"
 				}
 			],
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/firefox.png",
