@@ -16,6 +16,8 @@ services:
       SECURE_CONNECTION: ${SECURE_CONNECTION}
       VNC_PASSWORD: ${VNC_PASSWORD}
     shm_size: ${SMH_SIZE}
+    security_opt:
+      - seccomp:unconfined
     volumes:
       - /portainer/Files/AppData/Config/Firefox:/config
     restart: unless-stopped
