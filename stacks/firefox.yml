@@ -2,7 +2,7 @@
 version: "2"
 services:
   firefox:
-    image: "jlesage/firefox:latest"
+    image: "${DOCKER_IMAGE}"
     ports:
       - "${WEB_PORT}:5800"
       - "${VNC_PORT}:5900"
@@ -20,5 +20,5 @@ services:
     security_opt:
       - seccomp:unconfined
     volumes:
-      - /portainer/Files/AppData/Config/Firefox:/config
+      - ${VOLUME_PATH}:/config
     restart: unless-stopped

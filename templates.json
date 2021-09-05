@@ -2757,7 +2757,7 @@
 					"name": "TZ"
 				},
 				{
-					"default": "2GB",
+					"default": "2g",
 					"label": "Shared Memory Size",
 					"name": "SHM_SIZE"
 				},
@@ -2765,6 +2765,16 @@
 					"default": "-nocursor",
 					"label": "X11VNC Extra Options",
 					"name": "X11VNC_EXTRA_OPTS"
+				},
+				{
+					"default": "jlesage/firefox:latest",
+					"label": "Docker Image",
+					"name": "DOCKER_IMAGE"
+				},
+				{
+					"default": "/portainer/Files/AppData/Config/Firefox",
+					"label": "Volume Path",
+					"name": "VOLUME_PATH"
 				}
 			],
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/firefox.png",
@@ -2775,6 +2785,94 @@
 				"url": "https://github.com/OliverCullimore/portainer-templates"
 			},
 			"title": "Firefox",
+			"type": 3
+		},
+		{
+			"categories": [
+				"Other",
+				"Tools"
+			],
+			"description": "A Docker container for Firefox V2.",
+			"env": [
+				{
+					"default": "5800",
+					"label": "WEB_PORT",
+					"name": "WEB_PORT"
+				},
+				{
+					"default": "5900",
+					"label": "VNC_PORT",
+					"name": "VNC_PORT"
+				},
+				{
+					"default": "1",
+					"label": "Keep App Running",
+					"name": "KEEP_APP_RUNNING"
+				},
+				{
+					"default": "1280",
+					"label": "Display Width",
+					"name": "DISPLAY_WIDTH"
+				},
+				{
+					"default": "768",
+					"label": "Display Height",
+					"name": "DISPLAY_HEIGHT"
+				},
+				{
+					"default": "0",
+					"label": "Secure Connection",
+					"name": "SECURE_CONNECTION"
+				},
+				{
+					"label": "VNC Password",
+					"name": "VNC_PASSWORD",
+					"description": "Note: Password is limited to 8 characters"
+				},
+				{
+					"default": "1000",
+					"label": "User ID",
+					"name": "USER_ID"
+				},
+				{
+					"default": "1000",
+					"label": "Group ID",
+					"name": "GROUP_ID"
+				},
+				{
+					"default": "Europe/London",
+					"label": "Timezone",
+					"name": "TZ"
+				},
+				{
+					"default": "2g",
+					"label": "Shared Memory Size",
+					"name": "SHM_SIZE"
+				},
+				{
+					"default": "-nocursor",
+					"label": "X11VNC Extra Options",
+					"name": "X11VNC_EXTRA_OPTS"
+				},
+				{
+					"default": "olivercullimore/docker-firefox:master",
+					"label": "Docker Image",
+					"name": "DOCKER_IMAGE"
+				},
+				{
+					"default": "/portainer/Files/AppData/Config/FirefoxV2",
+					"label": "Volume Path",
+					"name": "VOLUME_PATH"
+				}
+			],
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/firefox.png",
+			"name": "firefoxv2",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/firefox.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "FirefoxV2",
 			"type": 3
 		},
 		{
