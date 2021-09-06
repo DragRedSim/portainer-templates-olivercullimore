@@ -16,6 +16,7 @@ services:
       SECURE_CONNECTION: ${SECURE_CONNECTION}
       VNC_PASSWORD: ${VNC_PASSWORD}
       X11VNC_EXTRA_OPTS: ${X11VNC_EXTRA_OPTS}
+      KIOSK_MODE: ${KIOSK_MODE}
     shm_size: ${SMH_SIZE}
     security_opt:
       - seccomp:unconfined

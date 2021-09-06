@@ -2855,6 +2855,11 @@
 					"name": "X11VNC_EXTRA_OPTS"
 				},
 				{
+					"default": "0",
+					"label": "Kiosk Mode",
+					"name": "KIOSK_MODE"
+				},
+				{
 					"default": "olivercullimore/docker-firefox:master",
 					"label": "Docker Image",
 					"name": "DOCKER_IMAGE"
