@@ -6208,7 +6208,7 @@
 					"name": "PGID"
 				}
 			],
-			"image": "olivercullimore/geo-energy-data",
+			"image": "olivercullimore/geo-energy-data:v2.0.0",
 			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/geo-energy-data.png",
 			"name": "geo-energy-data",
 			"platform": "linux",
