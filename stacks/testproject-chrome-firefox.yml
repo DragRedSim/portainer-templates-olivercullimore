@@ -1,0 +1,25 @@
+---
+version: "2"
+services:
+  testproject-agent:
+    image: testproject/agent:latest
+    container_name: testproject-agent
+    restart: unless-stopped
+    depends_on:
+      - chrome
+      - firefox
+    volumes:
+      - /portainer/Files/AppData/testproject-agent/config:/var/testproject/agent
+    environment:
+      TP_API_KEY: ${TP_API_KEY}
+      TP_AGENT_ALIAS: ${TP_AGENT_ALIAS}
+      CHROME: "chrome:4444"
+      FIREFOX: "firefox:4444"
+  chrome:
+    image: selenium/standalone-chrome
+    restart: unless-stopped
+    shm_size: ${CHROME_SMH_SIZE}
+  firefox:
+    image: selenium/standalone-firefox
+    restart: unless-stopped
+    shm_size: ${FIREFOX_SMH_SIZE}

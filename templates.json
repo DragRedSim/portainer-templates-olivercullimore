@@ -5366,6 +5366,43 @@
 		{
 			"categories": [
 				"Tools",
+				"Other"
+			],
+			"description": "TestProject Agent with headless Chrome & Firefox browsers.",
+			"env": [
+				{
+					"label": "TestProject API Key",
+					"name": "TP_API_KEY"
+				},
+				{
+					"default": "docker-agent-1",
+					"label": "TestProject Agent Alias",
+					"name": "TP_AGENT_ALIAS"
+				},
+				{
+					"label": "Chrome SMH Size",
+					"name": "CHROME_SMH_SIZE",
+					"default": "1g"
+				},
+				{
+					"label": "Firefox SMH Size",
+					"name": "FIREFOX_SMH_SIZE",
+					"default": "1g"
+				}
+			],
+			"logo": "https://raw.githubusercontent.com/OliverCullimore/portainer-templates/master/images/testproject.png",
+			"name": "teamcity-stack",
+			"platform": "linux",
+			"repository": {
+				"stackfile": "stacks/testproject-chrome-firefox.yml",
+				"url": "https://github.com/OliverCullimore/portainer-templates"
+			},
+			"title": "TestProject Agent Browser Stack",
+			"type": 3
+		},
+		{
+			"categories": [
+				"Tools",
 				"Media",
 				"Other"
 			],
