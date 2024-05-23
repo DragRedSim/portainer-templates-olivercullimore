@@ -5438,34 +5438,32 @@
 					"name": "YTDL_PROXY"
 				},
 				{
-					"default": true,
 					"label": "YTDL_WRITEINFOJSON",
 					"name": "YTDL_WRITEINFOJSON",
 					"select": [
 						{
 							"text": "Enabled",
-							"value": true,
+							"value": "true",
 							"default": true
 						},
 						{
 							"text": "Disabled",
-							"value": false
+							"value": "false"
 						}
 					]
 				},
 				{
-					"default": false,
 					"label": "YTDL_VERBOSE",
 					"name": "YTDL_VERBOSE",
 					"select": [
 						{
 							"text": "Disabled",
-							"value": false,
+							"value": "false",
 							"default": true
 						},
 						{
 							"text": "Enabled",
-							"value": true
+							"value": "true"
 						}
 					]
 				},
@@ -5532,34 +5530,32 @@
 					"name": "YTDL_PROXY"
 				},
 				{
-					"default": true,
 					"label": "YTDL_WRITEINFOJSON",
 					"name": "YTDL_WRITEINFOJSON",
 					"select": [
 						{
 							"text": "Enabled",
-							"value": true,
+							"value": "true",
 							"default": true
 						},
 						{
 							"text": "Disabled",
-							"value": false
+							"value": "false"
 						}
 					]
 				},
 				{
-					"default": false,
 					"label": "YTDL_VERBOSE",
 					"name": "YTDL_VERBOSE",
 					"select": [
 						{
 							"text": "Disabled",
-							"value": false,
+							"value": "false",
 							"default": true
 						},
 						{
 							"text": "Enabled",
-							"value": true
+							"value": "true"
 						}
 					]
 				},
