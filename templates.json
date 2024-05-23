@@ -5443,12 +5443,12 @@
 					"select": [
 						{
 							"text": "Enabled",
-							"value": true,
+							"value": "true",
 							"default": true
 						},
 						{
 							"text": "Disabled",
-							"value": false
+							"value": "false"
 						}
 					]
 				},
@@ -5458,12 +5458,12 @@
 					"select": [
 						{
 							"text": "Disabled",
-							"value": false,
+							"value": "false",
 							"default": true
 						},
 						{
 							"text": "Enabled",
-							"value": true
+							"value": "true"
 						}
 					]
 				},
@@ -5535,12 +5535,12 @@
 					"select": [
 						{
 							"text": "Enabled",
-							"value": true,
+							"value": "true",
 							"default": true
 						},
 						{
 							"text": "Disabled",
-							"value": false
+							"value": "false"
 						}
 					]
 				},
@@ -5550,12 +5550,12 @@
 					"select": [
 						{
 							"text": "Disabled",
-							"value": false,
+							"value": "false",
 							"default": true
 						},
 						{
 							"text": "Enabled",
-							"value": true
+							"value": "true"
 						}
 					]
 				},
